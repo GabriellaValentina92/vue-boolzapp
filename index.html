@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="box">
+        <div class="left">
+            <div class="userApp">
+                <div class="myavatar">
+                    <img :src="user" alt=""> 
+                    <h1>Sofia</h1>
+                </div>
+                <div class="icons">
+                    <i class="fa-solid fa-circle-notch circle"></i>
+                    <i class="fa-solid fa-message message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical dots"></i>
+                </div>
+            </div>
+            <div class="instaNotification">
+                <i class="fa-solid fa-bell-slash bell"></i>
+                <div class="notify-msg">
+                    <p> {{notify}} </p>
+                    <a href="#"> {{activedNotification}} </a>
+                </div>
+            </div>
+
+            <div class="inpuntSearch">
+                <label for="searchChat"><i class="fa-solid fa-magnifying-glass"></i></label>
+                <input type="text" name=""  placeholder="Cerca Chat" id="searchChat">
+            </div>
+            <div class="friendsChat" 
+            v-for="(contact, i) in contacts"> 
+                <img :src="contact.avatar" alt="">
+                <div class="name">{{contact.name}}</div>
+            </div>
+        </div>
+        
+        <div class="right">
+            <div class="top"></div>
+            <div class="middle"></div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+</body>
+</html>
