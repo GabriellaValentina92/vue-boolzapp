@@ -36,17 +36,41 @@
                 <label for="searchChat"><i class="fa-solid fa-magnifying-glass"></i></label>
                 <input type="text" name=""  placeholder="Cerca Chat" id="searchChat">
             </div>
+
             <div class="friendsChat" 
             v-for="(contact, i) in contacts"> 
                 <img :src="contact.avatar" alt="">
-                <div class="name">{{contact.name}}</div>
+                {{contact.name}}
             </div>
         </div>
         
         <div class="right">
-            <div class="top"></div>
+            <div class="top">
+                <div class="chat" 
+                v-for="(contact, i) in contacts">
+                    <img v-if="i === 0" 
+                    :src="contact.avatar">
+                    <h1 v-if="i === 0"> {{contact.name}} </h1>
+                </div> 
+                <div class="settings">
+                    <i class="fa-solid fa-magnifying-glass glass"></i>
+                    <i class="fa-solid fa-paperclip clip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical dot"></i>
+                </div>
+            </div>
             <div class="middle"></div>
-            <div class="bottom"></div>
+            <div class="bottom">
+                <div class="emoji">
+                    <i class="fa-sharp fa-regular fa-face-smile smileFace"></i>
+                </div>
+                <div class="text-message">
+                    <input type="text" name="" 
+                    placeholder=" scrivi un messaggio" id="text">
+                </div>
+                <div class="voice-message">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
         </div>
     </div>
 </body>
