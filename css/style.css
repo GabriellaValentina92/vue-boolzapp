@@ -37,7 +37,7 @@ body{
 .userApp{
     display: flex;
     justify-content: space-between;
-    height: 10%;
+    height: 60px;
     align-items: center;
     border-bottom: 0.5px solid lightgrey;
     background-color: lightgrey;
@@ -69,7 +69,7 @@ body{
 .instaNotification{
     display: flex;
     align-items: center;
-    height: 10%;
+    height: 70px;
     background-color: rgb(94, 238, 238);
     padding: 0.5rem;
 }
@@ -98,7 +98,7 @@ body{
 
 
 .inpuntSearch{
-    height: 10%;
+    height: 60px;
     background-color: rgb(234, 232, 232);
     padding: 0.5rem;
 }
@@ -135,7 +135,7 @@ body{
 .top{
     display: flex;
     align-items: center;
-    height: 10%;
+    height: 60px;
     justify-content: space-between;
     padding: 0.5rem;
     background-color: lightgrey;
@@ -163,13 +163,37 @@ body{
     padding-right: 0.4rem;
 }
 
+/* right-side middle part- chat conversations */
+
 .middle{
-    height: 80%;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 120px);
     background-image: url("../img/mine.jpg");
+    overflow-y: auto;
 }
 
+.middle .message{
+    max-width: 60%;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 2rem 2rem;
+}
+
+.middle .received{
+    align-self: flex-start;
+    background-color: white;
+}
+
+.middle .sent{
+    align-self: flex-end;
+    background-color: rgb(86, 243, 188);
+}
+
+/* right-side bottom/send message input part */
+
 .bottom{
-    height: 10%;
+    height: 60px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -183,7 +207,7 @@ body{
 }
 
 .bottom .text-message input{
-    width: 600px;
+    max-width: 200px;
     height: 40px;
     border-radius: 3px;
 }

@@ -40,7 +40,9 @@
             <div class="friendsChat" 
             v-for="(contact, i) in contacts"> 
                 <img :src="contact.avatar" alt="">
-                {{contact.name}}
+                <div class="chatName">{{contact.name}}
+                </div>
+                <div class="chatMsg"></div>
             </div>
         </div>
         
@@ -58,7 +60,12 @@
                     <i class="fa-solid fa-ellipsis-vertical dot"></i>
                 </div>
             </div>
-            <div class="middle"></div>
+            <div class="middle">
+                <div class="message sent">
+                </div>
+                <div class="message received">
+                </div>
+            </div>
             <div class="bottom">
                 <div class="emoji">
                     <i class="fa-sharp fa-regular fa-face-smile smileFace"></i>

@@ -4,6 +4,7 @@ const app = Vue.createApp({
             user: 'img/avatar_io.jpg',
             notify: 'ricevi notifiche di nuovi messaggi',
             activedNotification: 'Attiva notifiche adesso',
+            activeIndex:'0',
             contacts: [
                 {
                     name: 'Michele',
@@ -171,6 +172,10 @@ const app = Vue.createApp({
 
         };
     },
+
+    methods:{
+
+    }
 });
 
 app.mount('.box');
