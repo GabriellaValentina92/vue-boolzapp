@@ -53,7 +53,7 @@
                 <div class="chat">
                     <img 
                     :src="contacts[activeIndex].avatar">
-                    <h1> {{contact[activeIndex].name}} </h1>
+                    <h1> {{contacts[activeIndex].name}} </h1>
                 </div> 
                 <div class="settings">
                     <i class="fa-solid fa-magnifying-glass glass"></i>
@@ -76,7 +76,9 @@
                     <i class="fa-sharp fa-regular fa-face-smile smileFace"></i>
                 </div>
                 <div class="text-message">
-                    <input type="text" name="" 
+                    <input type="text" 
+                    v-model="message.text"
+                    @keyup.enter="sendMessage()"
                     placeholder=" scrivi un messaggio" id="text">
                 </div>
                 <div class="voice-message">

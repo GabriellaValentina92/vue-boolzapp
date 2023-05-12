@@ -5,6 +5,7 @@ const app = Vue.createApp({
             notify: 'ricevi notifiche di nuovi messaggi',
             activedNotification: 'Attiva notifiche adesso',
             activeIndex:'0',
+            text: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -176,6 +177,21 @@ const app = Vue.createApp({
     methods:{
         setActiveIndex(i){
             this.activeIndex = i;
+        },
+
+        sendMessage(){
+            let newMessage = {
+                    date : '10/01/2020 15:30:55',
+                    message : this.text,
+                    status : 'sent'
+                }
+
+                if(newMessage.status == 'sent') {
+                    this.contacts.push(newMessage.text);
+                    this.text = '';
+                }
+
+            
         }
     }
 
