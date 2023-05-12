@@ -167,9 +167,25 @@ const app = Vue.createApp({
                             status: 'received'
                         }
                     ],
+
                 }
-            ]
-            
+            ],
+
+            // newContacts: [
+            //     {
+            //         name: '',
+            //         avatar: '',
+            //         visible: true,
+            //         messages: [
+            //             {
+            //                 date: '',
+            //                 message: '',
+            //                 status: 'sent'
+            //             },
+                        
+            //         ]
+            //     }
+            // ]
 
         };
     },
@@ -181,7 +197,7 @@ const app = Vue.createApp({
 
         sendMessage(){
             let newMessage = {
-                    date : '10/01/2020 15:30:55',
+                    date : '',
                     message : this.text,
                     status : 'sent'
                 }
@@ -191,7 +207,8 @@ const app = Vue.createApp({
                     this.text = '';
                 }
 
-            
+            //  const objStr = JSON.stringify(this.newContacts);
+			// this.contacts.push(JSON.parse(objStr));
         }
     }
 
