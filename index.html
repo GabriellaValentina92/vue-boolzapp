@@ -7,11 +7,12 @@
     <title>Boolzapp</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
+    <style>[v-cloak] {display: none;}</style>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    <div class="box">
+    <div class="box" v-cloak>
         <div class="left">
             <div class="userApp">
                 <div class="myavatar">
@@ -38,7 +39,8 @@
             </div>
 
             <div class="friendsChat" 
-            v-for="(contact, i) in contacts"> 
+            v-for="(contact, i) in contacts" 
+            @click="setActiveIndex(i)"> 
                 <img :src="contact.avatar" alt="">
                 <div class="chatName">{{contact.name}}
                 </div>
@@ -48,11 +50,10 @@
         
         <div class="right">
             <div class="top">
-                <div class="chat" 
-                v-for="(contact, i) in contacts">
-                    <img v-if="i === 0" 
-                    :src="contact.avatar">
-                    <h1 v-if="i === 0"> {{contact.name}} </h1>
+                <div class="chat">
+                    <img 
+                    :src="contacts[activeIndex].avatar">
+                    <h1> {{contact[activeIndex].name}} </h1>
                 </div> 
                 <div class="settings">
                     <i class="fa-solid fa-magnifying-glass glass"></i>
@@ -61,9 +62,13 @@
                 </div>
             </div>
             <div class="middle">
-                <div class="message sent">
+                <div 
+                v-for="contactMessage in contacts[activeIndex].messages"
+                class="message"
+                :class="contactMessage.status == 'sent' ? 'sent' : 'received'">
+                <div class="text">
+                    {{contactMessage.message}}
                 </div>
-                <div class="message received">
                 </div>
             </div>
             <div class="bottom">
