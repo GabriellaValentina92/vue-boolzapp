@@ -66,9 +66,9 @@
                 v-for="contactMessage in contacts[activeIndex].messages"
                 class="message"
                 :class="contactMessage.status == 'sent' ? 'sent' : 'received'">
-                <div class="text">
-                    {{contactMessage.message}}
-                </div>
+                    <div class="text">
+                        {{contactMessage.message}}
+                    </div>
                 </div>
             </div>
             <div class="bottom">
@@ -80,6 +80,8 @@
                     v-model="text"
                     @keyup.enter="sendMessage()"
                     placeholder=" scrivi un messaggio" id="text">
+                </div>
+                <div class="automsg">
                 </div>
                 <div class="voice-message">
                     <i class="fa-solid fa-microphone"></i>

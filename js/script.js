@@ -6,6 +6,7 @@ const app = Vue.createApp({
             activedNotification: 'Attiva notifiche adesso',
             activeIndex:'0',
             text: '',
+            message: 'mannaggia a js/vue js',
             contacts: [
                 {
                     name: 'Michele',
@@ -171,22 +172,6 @@ const app = Vue.createApp({
                 }
             ],
 
-            // newContacts: [
-            //     {
-            //         name: '',
-            //         avatar: '',
-            //         visible: true,
-            //         messages: [
-            //             {
-            //                 date: '',
-            //                 message: '',
-            //                 status: 'sent'
-            //             },
-                        
-            //         ]
-            //     }
-            // ]
-
         };
     },
 
@@ -202,17 +187,24 @@ const app = Vue.createApp({
                     status : 'sent'
                 }
 
-                if(newMessage.status == 'sent') {
-                    this.contacts.push(newMessage.text);
-                    this.text = '';
+            if(newMessage.status == 'sent') {
+                this.contacts[this.activeIndex].messages.push(newMessage);
+                this.text = '';
+            }
+            
+            setTimeout(() => {
+                let automessage = {
+                    date : '',
+                    message : this.message,
+                    status : 'received'
                 }
-
-            //  const objStr = JSON.stringify(this.newContacts);
-			// this.contacts.push(JSON.parse(objStr));
-        }
+    
+                this.contacts[this.activeIndex].messages.push(automessage);
+            }, 1000);
+        },
+   
+       
     }
-
 });
 
 app.mount('.box');
-
