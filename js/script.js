@@ -6,7 +6,7 @@ const app = Vue.createApp({
             activedNotification: 'Attiva notifiche adesso',
             activeIndex:'0',
             text: '',
-            message: 'mannaggia a js/vue js',
+            message: 'mortacci a js',
             contacts: [
                 {
                     name: 'Michele',
@@ -191,7 +191,7 @@ const app = Vue.createApp({
                 this.contacts[this.activeIndex].messages.push(newMessage);
                 this.text = '';
             }
-            
+
             setTimeout(() => {
                 let automessage = {
                     date : '',
