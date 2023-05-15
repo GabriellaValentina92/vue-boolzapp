@@ -190,6 +190,19 @@ body{
     background-color: rgb(86, 243, 188);
 }
 
+.middle .text{
+    position: relative;
+    padding-right: 0.4rem;
+}
+
+.dropdown_menu{
+    position: absolute;
+    bottom: -8px;
+    right: -25px;
+    border-width: 0;
+    border-color: transparent;
+}
+
 /* right-side bottom/send message input part */
 
 .bottom{

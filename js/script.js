@@ -202,7 +202,11 @@ const app = Vue.createApp({
     
                 this.contacts[this.activeIndex].messages.push(automessage);
             }, 1000);
-        }, 
+        },
+        
+        // deleteMessage(){
+            
+        // }
     },
 
     computed: {
@@ -212,8 +216,8 @@ const app = Vue.createApp({
             } else {
                 return this.contacts
             }
-        }
-    }
+        },
+    },
 });
 
 app.mount('.box');
