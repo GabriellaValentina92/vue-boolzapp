@@ -6,6 +6,7 @@ const app = Vue.createApp({
             activedNotification: 'Attiva notifiche adesso',
             activeIndex:'0',
             text: '',
+            inputSearch: '',
             message: 'mortacci a js',
             contacts: [
                 {
@@ -201,9 +202,17 @@ const app = Vue.createApp({
     
                 this.contacts[this.activeIndex].messages.push(automessage);
             }, 1000);
-        },
-   
-       
+        }, 
+    },
+
+    computed: {
+        filteredChat(){
+            if(this.inputSearch.trim().length > 0){
+                return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.inputSearch.toLowerCase()))
+            } else {
+                return this.contacts
+            }
+        }
     }
 });
 
