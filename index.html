@@ -33,13 +33,14 @@
                 </div>
             </div>
 
-            <div class="inpuntSearch">
+            <div class="inputSearch">
                 <label for="searchChat"><i class="fa-solid fa-magnifying-glass"></i></label>
-                <input type="text" name=""  placeholder="Cerca Chat" id="searchChat">
+                <input type="text" name=""  placeholder="Cerca Chat" id="searchChat" v-model="inputSearch">
             </div>
 
             <div class="friendsChat" 
-            v-for="(contact, i) in contacts" 
+            v-for="(contact, i) in filteredChat"
+            :key="i" 
             @click="setActiveIndex(i)"> 
                 <img :src="contact.avatar" alt="">
                 <div class="chatName">{{contact.name}}
